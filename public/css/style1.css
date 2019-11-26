@@ -1,5 +1,5 @@
 .header{
-
+    
     background:#272c33 !important ;
     color:white !important;
 }
@@ -8,13 +8,4 @@
 }
 .wi{
     color:white !important;
-}
-.weeb{
-    background-image: url("../images/bg/lRbg.jpg");
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
 }
