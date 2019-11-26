@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\Role;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -27,7 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public function role(){
+        return $this->belongsTo('App\Role');
+    }
     /**
      * The attributes that should be cast to native types.
      *
