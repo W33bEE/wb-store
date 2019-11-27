@@ -50,20 +50,28 @@
                 <li class="active">
                     <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
-                <h3 class="menu-title">UI</h3><!-- /.menu-title -->
+                <h3 class="menu-title">User Interfase</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-circle"></i>Users:</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><a href="{{route('users.index')}}">All Users:</a></li>
-                        <li><a href="{{route('users.create')}}">All Users:</a></li>
+                        <li><a href="{{route('users.create')}}">Create User:</a></li>
 
                     </ul>
                 </li>
 
 
-                <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                <h3 class="menu-title">Products interface</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-crown"></i>Products:</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><a href="{{route('products.index')}}">All Products:</a></li>
+                        <li><a href="{{route('products.create')}}">Create Product:</a></li>
 
-             
+                    </ul>
+                </li>
+
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -226,7 +234,7 @@
     </div>
 
 
-    <div class="content mt-3">
+    <div class="content mt-3 d-flex">
         @if(session('status'))
         <div class="col-sm-12">
             <div class="alert  alert-success alert-dismissible fade show" role="alert">

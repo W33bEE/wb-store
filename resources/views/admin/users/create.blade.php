@@ -3,6 +3,7 @@
     Create User:
     @stop
 @section('content')
+    <div class="col-md-8 text-white mx-auto">
     {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store','files'=>true]) !!}
     <div class="form-group">
         {!! Form::label('name','Username:') !!}
@@ -33,8 +34,9 @@
         {!! Form::password('password',['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Create User', ['class'=>'btn btn-success']) !!}
+        {!! Form::submit('Create User', ['class'=>'btn btn-success btn-rounded']) !!}
     </div>
     {!! Form::close() !!}
     @include('includes.form_error')
+    </div>
     @stop

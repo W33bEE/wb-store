@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware'=>'admin'], function(){
+    Route::get('/admin',function(){
+        return view('admin.index');
+    });
+});
 
-Route::get('/admin', 'HomeController@index');
-Route::resource('admin/users',"AdminUsersController");
+/*Route::get('/admin', 'HomeController@index');*/
+Route::resource('/admin/users',"AdminUsersController");
+Route::resource('/admin/Products','AdminProductsController');
