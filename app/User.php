@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Role;
 use App\Photo;
+use App\Product;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -19,6 +20,9 @@ class User extends Authenticatable
     protected $fillable = [
         'First_name', 'Last_name', 'name', 'email', 'password','photo_id','is_active'
     ];
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
 
     /**
      * The attributes that should be hidden for arrays.

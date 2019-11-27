@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Category;
+use App\User;
+use App\Product;
 use Illuminate\Http\Request;
 
 class AdminProductsController extends Controller
@@ -14,7 +16,8 @@ class AdminProductsController extends Controller
     public function index()
     {
         //
-        return view('admin.products.index');
+        $products = Product::all();
+        return view('admin.products.index',compact('products'));
     }
 
     /**
@@ -25,7 +28,8 @@ class AdminProductsController extends Controller
     public function create()
     {
         //
-        return view('admin.products.create');
+        $categories =Category::pluck('name','id')->all();
+        return view('admin.products.create',compact('categories'));
     }
 
     /**

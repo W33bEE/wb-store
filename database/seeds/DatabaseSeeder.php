@@ -9,9 +9,17 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+    protected $toTruncate = ['products','categories'];
     public function run()
     {
-         $this->call(UsersTableSeeder::class);
-        $this->call(RolesTableSeeder::class);
+
+        // $this->call(UsersTableSeeder::class);
+        //$this->call(RolesTableSeeder::class);
+    foreach ($this->toTruncate as $table){
+       // DB::table('Products')->truncate();
+        DB::table('Categories')->truncate();
+    }
+   // $this->call(ProductsTableSeeder::class);
+    $this->call(CategoriesTableSeeder::class);
     }
 }
