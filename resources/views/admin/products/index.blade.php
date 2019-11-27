@@ -34,13 +34,13 @@
                             @foreach($products as $product)
                      <tr>
                          <td class="text-center">{{$product->id}}</td>
-                         <td>{{$product->photo_id}}</td>
+                         <td><img src="{{$product->photo ? asset($product->photo->file) : 'http://placehold.it/400x400'}}" alt="" class="img-fluid"></td>
                          <td>{{$product->user->Last_name.' '.$product->user->First_name}}</td>
-                         <td>{{$product->category_id}}</td>
-                         <td>{{$product->brand_id}}</td>
+                         <td>{{$product->category ? $product->category->name : 'Uncategorized'}}</td>
+                         <td>{{$product->brand ? $product->brand->name : 'No brand added'}}</td>
                          <td>{{$product->title}}</td>
                          <td>{{$product->body}}</td>
-                         <td>{{$product->size_id}}</td>
+                         <td>{{$product->size ? $product->size->name : 'No measurements added'}}</td>
                          <td class="text-center">{{$product->price}}€</td>
                          <td class="text-center">{{(($product->price)/100)*21+($product->price)}}€</td>
 

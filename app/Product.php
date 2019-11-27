@@ -3,7 +3,10 @@
 namespace App;
 use App\Role;
 use App\Photo;
-use App\user;
+use App\User;
+use App\Category;
+use App\Brand;
+use App\Size;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -18,5 +21,11 @@ class Product extends Model
     }
     public function category(){
         return $this->belongsTo('App\Category');
+    }
+    public function brand(){
+        return $this->belongsTo('App\Brand');
+    }
+    public function size(){
+        return $this->belongsTo('App\Size');
     }
 }

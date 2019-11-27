@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    protected $toTruncate = ['products','categories'];
+    protected $toTruncate = ['products','categories','brands','sizes'];
     public function run()
     {
 
@@ -17,9 +17,13 @@ class DatabaseSeeder extends Seeder
         //$this->call(RolesTableSeeder::class);
     foreach ($this->toTruncate as $table){
        // DB::table('Products')->truncate();
-        DB::table('Categories')->truncate();
+        //DB::table('Categories')->truncate();
+        DB::table('Brands')->truncate();
+        DB::table('Sizes')->truncate();
     }
    // $this->call(ProductsTableSeeder::class);
-    $this->call(CategoriesTableSeeder::class);
+   // $this->call(CategoriesTableSeeder::class);
+    $this->call(BrandsTableSeeder::class);
+    $this->call(SizesTableSeeder::class);
     }
 }
