@@ -75,6 +75,9 @@ class AdminSizesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $size= Size::findOrFail($id);
+        $size->update($request->all());
+        return redirect('/admin/sizes');
     }
 
     /**
@@ -86,5 +89,7 @@ class AdminSizesController extends Controller
     public function destroy($id)
     {
         //
+        Size::findOrFail($id)->delete();
+        return redirect('/admin/sizes');
     }
 }

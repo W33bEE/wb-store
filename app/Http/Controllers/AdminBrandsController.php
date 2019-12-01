@@ -75,6 +75,9 @@ class AdminBrandsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $brand= Brand::findOrFail($id);
+        $brand->update($request->all());
+        return redirect('/admin/brands');
     }
 
     /**
@@ -86,5 +89,8 @@ class AdminBrandsController extends Controller
     public function destroy($id)
     {
         //
+        Brand::findOrFail($id)->delete();
+        return redirect('/admin/brands');
+
     }
 }
