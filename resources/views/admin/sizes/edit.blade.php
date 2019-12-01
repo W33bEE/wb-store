@@ -3,7 +3,7 @@
     Edit Size:
 @stop
 @section('content')
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         {!! Form::model($size,['method'=>'PATCH','action'=>['AdminSizesController@update',$size->id]]) !!}
         <div class="form-group">
             {!! Form::label('name','Name:') !!}

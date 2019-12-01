@@ -3,7 +3,7 @@
     All Brands
 @stop
 @section('content')
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         {!! Form::open(['method'=>'POST','action'=>'AdminBrandsController@store']) !!}
         <div class="form-group">
             {!! Form::label('name','Name:') !!}
@@ -14,7 +14,7 @@
         </div>
         {!! Form::close() !!}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         @if($brands)
             <table class="table">
                 <thead>
@@ -28,7 +28,7 @@
                 @foreach($brands as $brand)
                     <tr>
                         <td>{{$brand->id}}</td>
-                        <td>{{$brand->name}}</td>
+                        <td><a href="{{route('brands.edit',$brand->id)}}">{{$brand->name}}</a></td>
                         <td>{{$brand->created_at ? $brand->created_at : 'no date'}}</td>
                     </tr>
                 @endforeach

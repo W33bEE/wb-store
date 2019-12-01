@@ -3,7 +3,7 @@
     All Sizes
 @stop
 @section('content')
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         {!! Form::open(['method'=>'POST','action'=>'AdminSizesController@store']) !!}
         <div class="form-group">
             {!! Form::label('name','Name:') !!}
@@ -14,7 +14,7 @@
         </div>
         {!! Form::close() !!}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         @if($sizes)
             <table class="table">
                 <thead>
@@ -28,7 +28,7 @@
                 @foreach($sizes as $size)
                     <tr>
                         <td>{{$size->id}}</td>
-                        <td>{{$size->name}}</td>
+                        <td><a href="{{route('sizes.edit',$size->id)}}">{{$size->name}}</a></td>
                         <td>{{$size->created_at ? $size->created_at : 'no date'}}</td>
                     </tr>
                 @endforeach

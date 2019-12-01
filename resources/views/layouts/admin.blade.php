@@ -71,29 +71,39 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-crown"></i>Categories:</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-layout-menu-v"></i>Categories:</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><a href="{{route('categories.index')}}">All Categories:</a></li>
-                        <li><a href="{{route('categories.create')}}">Create Category:</a></li>
+
 
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-crown"></i>Brands:</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-stamp"></i>Brands:</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><a href="{{route('brands.index')}}">All Brands:</a></li>
-                        <li><a href="{{route('brands.create')}}">Add Brand:</a></li>
+
 
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-crown"></i>Sizes:</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-ruler-pencil"></i>Sizes:</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><a href="{{route('sizes.index')}}">All Sizes:</a></li>
-                        <li><a href="{{route('sizes.create')}}">Add Size:</a></li>
+
 
                     </ul>
                 </li>
+                <h3 class="menu-title">Orders Interfase</h3>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-shopping-cart-full"></i>Orders:</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><a href="">All Orders:</a></li>
+
+
+                    </ul>
+                </li>
+
 
 
             </ul>

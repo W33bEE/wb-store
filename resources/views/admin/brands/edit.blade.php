@@ -3,7 +3,7 @@
     Edit Brand:
 @stop
 @section('content')
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         {!! Form::model($brand,['method'=>'PATCH','action'=>['AdminBrandsController@update',$brand->id]]) !!}
         <div class="form-group">
             {!! Form::label('name','Name:') !!}

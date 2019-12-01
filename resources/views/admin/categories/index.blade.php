@@ -3,7 +3,7 @@
     All Categories
     @stop
 @section('content')
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         {!! Form::open(['method'=>'POST','action'=>'AdminCategoriesController@store']) !!}
         <div class="form-group">
             {!! Form::label('name','Name:') !!}
@@ -14,7 +14,7 @@
         </div>
         {!! Form::close() !!}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         @if($categories)
             <table class="table">
                 <thead>
@@ -28,7 +28,7 @@
                 @foreach($categories as $category)
                     <tr>
                         <td>{{$category->id}}</td>
-                        <td>{{$category->name}}</td>
+                        <td><a href="{{route('categories.edit',$category->id)}}">{{$category->name}}</a></td>
                         <td>{{$category->created_at ? $category->created_at : 'no date'}}</td>
                     </tr>
                     @endforeach

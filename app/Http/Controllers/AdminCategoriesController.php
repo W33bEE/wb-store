@@ -61,7 +61,7 @@ class AdminCategoriesController extends Controller
     public function edit($id)
     {
         //
-        $category=Brand::findOrFail($id);
+        $category=Category::findOrFail($id);
         return view('admin.categories.edit',compact('category'));
     }
 

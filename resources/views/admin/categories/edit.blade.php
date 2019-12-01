@@ -3,7 +3,7 @@
     Edit Category:
     @stop
 @section('content')
-    <div class="col-md-6">
+    <div class="col-md-6 text-white">
         {!! Form::model($category,['method'=>'PATCH','action'=>['AdminCategoriesController@update',$category->id]]) !!}
         <div class="form-group">
             {!! Form::label('name','Name:') !!}
