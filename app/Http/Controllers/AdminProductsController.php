@@ -78,6 +78,11 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         //
+        $product = Product::findOrFail($id);
+        $categories =Category::pluck('name','id')->all();
+        $brands =Brand::pluck('name','id')->all();
+        $sizes =Size::pluck('name','id')->all();
+        return view('admin.products.edit',compact('product','categories','brands','sizes'));
     }
 
     /**
@@ -90,6 +95,15 @@ class AdminProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $input = $request->all();
+        if($file = $request->file('photo_id')){
+            $name = time().$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo= Photo::create(['file' =>$name]);
+            $input['photo_id']= $photo->id;
+        }
+        Auth::user()->products()->whereId($id)->first()->update($input);
+        return redirect('/admin.products');
     }
 
     /**
@@ -101,5 +115,9 @@ class AdminProductsController extends Controller
     public function destroy($id)
     {
         //
+        $product = Product::findOrFail($id);
+        unlink(public_path() . $product->photo->file);
+        $product->delete();
+        return redirect('/admin/products');
     }
 }

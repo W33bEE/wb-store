@@ -41,14 +41,14 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand text-white" href="./">WB-Admin</a>
-            <a class="navbar-brand hidden" href="./">WB</a>
+            <a class="navbar-brand text-white" href="">WB-Admin</a>
+            <a class="navbar-brand hidden" href="">WB</a>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href=""> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
                 <h3 class="menu-title">User Interfase</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
@@ -67,6 +67,30 @@
                     <ul class="sub-menu children dropdown-menu">
                         <li><a href="{{route('products.index')}}">All Products:</a></li>
                         <li><a href="{{route('products.create')}}">Create Product:</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-crown"></i>Categories:</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><a href="{{route('categories.index')}}">All Categories:</a></li>
+                        <li><a href="{{route('categories.create')}}">Create Category:</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-crown"></i>Brands:</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><a href="{{route('brands.index')}}">All Brands:</a></li>
+                        <li><a href="{{route('brands.create')}}">Add Brand:</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-crown"></i>Sizes:</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><a href="{{route('sizes.index')}}">All Sizes:</a></li>
+                        <li><a href="{{route('sizes.create')}}">Add Size:</a></li>
 
                     </ul>
                 </li>

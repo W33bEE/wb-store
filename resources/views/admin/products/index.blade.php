@@ -9,9 +9,7 @@
 
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <strong class="card-title">All Products:</strong>
-                </div>
+
                 <div class="card-body">
                     <table id="bootstrap-data-table-export" class="table table-dark table-hover table-responsive table-striped table-bordered">
                         <thead>
@@ -35,7 +33,7 @@
                      <tr>
                          <td class="text-center">{{$product->id}}</td>
                          <td><img src="{{$product->photo ? asset($product->photo->file) : 'http://placehold.it/400x400'}}" alt="" class="img-fluid"></td>
-                         <td>{{$product->user->Last_name.' '.$product->user->First_name}}</td>
+                         <td><a href="{{route('products.edit',$product->id)}}">{{$product->user->Last_name.' '.$product->user->First_name}}</a></td>
                          <td>{{$product->category ? $product->category->name : 'Uncategorized'}}</td>
                          <td>{{$product->brand ? $product->brand->name : 'No brand added'}}</td>
                          <td>{{$product->title}}</td>

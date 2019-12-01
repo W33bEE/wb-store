@@ -3,7 +3,7 @@
     Create Product:
     @stop
 @section('content')
-
+    <div class="col-md-6 text-white mx-auto">
     {!! Form::open(['method'=>'POST','action'=>'AdminProductsController@store','files'=>true]) !!}
     <div class="form-group">
         {!! Form::label('category_id','Category:') !!}
@@ -32,8 +32,9 @@
 
     </div>
     <div class="form-group">
-        {!! Form::submit('Create Product',['class'=>'btn btn-success']) !!}
+        {!! Form::submit('Create Product',['class'=>'btn btn-success btn-outline btn-block']) !!}
     </div>
     {!! Form::close() !!}
+    </div>
     @include('includes.form_error')
     @stop

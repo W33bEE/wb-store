@@ -1,21 +1,21 @@
 @extends('layouts.admin')
 @section('dash')
-    All Categories
-    @stop
+    All Sizes
+@stop
 @section('content')
     <div class="col-md-6">
-        {!! Form::open(['method'=>'POST','action'=>'AdminCategoriesController@store']) !!}
+        {!! Form::open(['method'=>'POST','action'=>'AdminSizesController@store']) !!}
         <div class="form-group">
             {!! Form::label('name','Name:') !!}
             {!! Form::text('name',null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::submit('Create Category',['class'=>'btn btn-success']) !!}
+            {!! Form::submit('Create Size',['class'=>'btn btn-success']) !!}
         </div>
         {!! Form::close() !!}
     </div>
     <div class="col-md-6">
-        @if($categories)
+        @if($sizes)
             <table class="table">
                 <thead>
                 <tr>
@@ -25,15 +25,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($categories as $category)
+                @foreach($sizes as $size)
                     <tr>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->name}}</td>
-                        <td>{{$category->created_at ? $category->created_at : 'no date'}}</td>
+                        <td>{{$size->id}}</td>
+                        <td>{{$size->name}}</td>
+                        <td>{{$size->created_at ? $size->created_at : 'no date'}}</td>
                     </tr>
-                    @endforeach
+                @endforeach
                 </tbody>
             </table>
-            @endif
+        @endif
     </div>
-    @stop
+@stop
+

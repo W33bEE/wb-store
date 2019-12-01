@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UsersRequest;
 use App\Role;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\User;
 use App\Photo;
 use Illuminate\Support\Facades\Hash;

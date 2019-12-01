@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('dash')
-    Users
+    Users:
     @stop
 @section('content')
     @if(Session::has('deleted_user'))
@@ -11,9 +11,7 @@
 
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <strong class="card-title">All Users:</strong>
-                    </div>
+
                     <div class="card-body">
                         <table id="bootstrap-data-table-export" class="table table-dark table-hover table-responsive table-striped table-bordered">
                             <thead>
