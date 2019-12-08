@@ -20,8 +20,8 @@ class CreateProductsTable extends Migration
             $table->integer('photo_id')->unsigned()->index();
             $table->integer('brand_id')->unsigned()->index();
             $table->integer('size_id')->unsigned()->index();
-            $table->integer('stock_id')->unsigned()->index();
-            $table->integer('price');
+            $table->integer('stock_id');
+            $table->decimal('price');
             $table->string('title');
             $table->string('body');
             $table->timestamps();

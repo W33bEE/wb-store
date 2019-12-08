@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="startTime()">
 
 
 <!-- Left Panel -->
@@ -204,7 +204,7 @@
             <div class="col-sm-5">
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        <img class="user-avatar rounded-circle" src="{{Auth::user()->photo ? asset($user->photo->file) : 'http://placehold.it/40x40'}}" alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">
@@ -269,16 +269,7 @@
 
 
     <div class="content mt-3 d-flex">
-        @if(session('status'))
-        <div class="col-sm-12">
-            <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                <span class="badge badge-pill badge-success">Success  {{ session('status') }}</span> You are logged in!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-        @endif
+
         @yield('content')
 
 
@@ -329,7 +320,7 @@
         });
     })(jQuery);
 </script>
-
+<script src="{{asset('js/myscript.js')}}"></script>
 </body>
 
 </html>

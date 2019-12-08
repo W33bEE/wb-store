@@ -22,6 +22,7 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>size</th>
+                            <th>stock</th>
                             <th>Price</th>
                             <th>Price +btw</th>
 
@@ -31,16 +32,17 @@
                         @if($products)
                             @foreach($products as $product)
                      <tr>
-                         <td class="text-center">{{$product->id}}</td>
-                         <td><img src="{{$product->photo ? asset($product->photo->file) : 'http://placehold.it/400x400'}}" alt="" class="img-fluid"></td>
-                         <td><a href="{{route('products.edit',$product->id)}}">{{$product->user->Last_name.' '.$product->user->First_name}}</a></td>
-                         <td>{{$product->category ? $product->category->name : 'Uncategorized'}}</td>
-                         <td>{{$product->brand ? $product->brand->name : 'No brand added'}}</td>
-                         <td>{{$product->title}}</td>
-                         <td>{{$product->body}}</td>
-                         <td>{{$product->size ? $product->size->name : 'No measurements added'}}</td>
-                         <td class="text-center">{{$product->price}}€</td>
-                         <td class="text-center">{{(($product->price)/100)*21+($product->price)}}€</td>
+                         <td class="text-center align-middle">{{$product->id}}</td>
+                         <td class="text-center align-middle"><img height="62" width="62" src="{{$product->photo ? asset($product->photo->file) : 'http://placehold.it/62x62'}}" alt="" class="img-fluid"></td>
+                         <td class="text-center align-middle"><a href="{{route('products.edit',$product->id)}}">{{$product->user->Last_name.' '.$product->user->First_name}}</a></td>
+                         <td class="text-center align-middle">{{$product->category ? $product->category->name : 'Uncategorized'}}</td>
+                         <td class="text-center align-middle">{{$product->brand ? $product->brand->name : 'No brand added'}}</td>
+                         <td class="text-center align-middle">{{$product->title}}</td>
+                         <td class="text-center align-middle">{{$product->body}}</td>
+                         <td class="text-center align-middle">{{$product->size ? $product->size->name : 'No measurements added'}}</td>
+                         <td class="text-center align-middle">{{$product->stock_id}}</td>
+                         <td class="text-center align-middle">{{$product->price}}€</td>
+                         <td class="text-center align-middle">{{(($product->price)/100)*21+($product->price)}}€</td>
 
                      </tr>
                             @endforeach

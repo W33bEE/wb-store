@@ -7,7 +7,9 @@ use App\Size;
 use App\Http\Requests\ProductsCreateRequest;
 use App\User;
 use App\Product;
+use App\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminProductsController extends Controller
 {
@@ -19,8 +21,9 @@ class AdminProductsController extends Controller
     public function index()
     {
         //
+        $user=Auth::user();
         $products = Product::all();
-        return view('admin.products.index',compact('products'));
+        return view('admin.products.index',compact('products','user'));
     }
 
     /**
@@ -31,10 +34,11 @@ class AdminProductsController extends Controller
     public function create()
     {
         //
+        $user=Auth::user();
         $categories =Category::pluck('name','id')->all();
         $brands =Brand::pluck('name','id')->all();
         $sizes =Size::pluck('name','id')->all();
-        return view('admin.products.create',compact('categories','brands','sizes'));
+        return view('admin.products.create',compact('categories','brands','sizes','user'));
     }
 
     /**
@@ -48,12 +52,15 @@ class AdminProductsController extends Controller
         //
         $input = $request->all();
         $user=Auth::user();
+
         if($file = $request->file('photo_id')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images',$name);
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
+
         }
+
         $user->products()->create($input);
         return redirect('/admin/products');
     }
@@ -78,11 +85,12 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         //
+        $user=Auth::user();
         $product = Product::findOrFail($id);
         $categories =Category::pluck('name','id')->all();
         $brands =Brand::pluck('name','id')->all();
         $sizes =Size::pluck('name','id')->all();
-        return view('admin.products.edit',compact('product','categories','brands','sizes'));
+        return view('admin.products.edit',compact('product','categories','brands','sizes','user'));
     }
 
     /**
@@ -95,15 +103,18 @@ class AdminProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $input = $request->all();
+
         if($file = $request->file('photo_id')){
             $name = time().$file->getClientOriginalName();
             $file->move('images',$name);
             $photo= Photo::create(['file' =>$name]);
             $input['photo_id']= $photo->id;
+
         }
         Auth::user()->products()->whereId($id)->first()->update($input);
-        return redirect('/admin.products');
+        return redirect('/admin/products',compact('product','categories','brands','sizes'));
     }
 
     /**

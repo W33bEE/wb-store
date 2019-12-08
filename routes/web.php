@@ -11,18 +11,31 @@
 |
 */
 
+/*Route::get('/', function () {
+    return view('welcome');*/
+/*});*/
+
+
+use App\Category;
+use App\Product;
+Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    $categories = Category::all();
+    $products = Product::all();
+    return view('welcome',compact('categories','products'));
+});
+Route::get('/product/{id}', function ($id) {
+    $products = Product::findOrFail($id);
+    return view('product',compact('products'));
 });
 
-Auth::routes();
 Route::group(['middleware'=>'admin'], function(){
     Route::get('/admin',function(){
         return view('admin.index');
     });
 });
 
-/*Route::get('/admin', 'HomeController@index');*/
+Route::get('/admin', 'HomeController@index');
 Route::resource('/admin/users',"AdminUsersController");
 Route::resource('/admin/products','AdminProductsController');
 Route::resource('/admin/categories','AdminCategoriesController');

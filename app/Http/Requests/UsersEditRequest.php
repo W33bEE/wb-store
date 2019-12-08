@@ -28,7 +28,7 @@ class UsersEditRequest extends FormRequest
             'name'=>'required',
             'Last_name'=>'required',
             'First_name'=>'required',
-            'email.required'=>'required',
+            'email'=>'required',
             'role_id'=>'required',
 
         ];
