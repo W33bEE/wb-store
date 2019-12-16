@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Size;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AdminSizesController extends Controller
 {
@@ -15,9 +14,8 @@ class AdminSizesController extends Controller
     public function index()
     {
         //
-        $user=Auth::user();
         $sizes = Size::all();
-        return view('admin.sizes.index',compact('sizes','user'));
+        return view('admin.sizes.index',compact('sizes'));
     }
 
     /**
@@ -63,7 +61,7 @@ class AdminSizesController extends Controller
     public function edit($id)
     {
         //
-        $size=Size::findOrFail($id);
+        $size=Brand::findOrFail($id);
         return view('admin.sizes.edit',compact('size'));
     }
 

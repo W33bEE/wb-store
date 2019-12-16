@@ -11,24 +11,21 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');*/
-/*});*/
-
-
-use App\Category;
 use App\Product;
-Auth::routes();
-Route::get('/', function () {
-    $categories = Category::all();
-    $products = Product::all();
-    return view('welcome',compact('categories','products'));
-});
-Route::get('/product/{id}', function ($id) {
-    $products = Product::findOrFail($id);
-    return view('product',compact('products'));
-});
+use App\Category;
 
+Route::get('/', function () {
+    $products = Product::all();
+    $categories = Category::all();
+    return view('welcome',compact('products','categories'));
+});
+Route::get('/order',function(){
+    return view('orders');
+});
+Route::get('/check',function(){
+    return view('checkout');
+});
+Auth::routes();
 Route::group(['middleware'=>'admin'], function(){
     Route::get('/admin',function(){
         return view('admin.index');
@@ -41,3 +38,5 @@ Route::resource('/admin/products','AdminProductsController');
 Route::resource('/admin/categories','AdminCategoriesController');
 Route::resource('/admin/brands','AdminBrandsController');
 Route::resource('/admin/sizes','AdminSizesController');
+Route::resource('/spots','SpotsController');
+

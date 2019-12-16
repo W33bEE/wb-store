@@ -1,1213 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Home 03</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{{asset('images/front/icons/favicon.png')}}"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/bootstrap/css/bootstrap.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('fonts/iconic/css/material-design-iconic-font.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('fonts/linearicons-v1.0.0/icon-font.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/animate/animate.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/css-hamburgers/hamburgers.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/animsition/css/animsition.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/select2/select2.min.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/vendersfront/daterangepicker/daterangepicker.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/slick/slick.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/MagnificPopup/magnific-popup.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('vendors/venderfront/perfect-scrollbar/perfect-scrollbar.css')}}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/cssfront/util.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/cssfront/main.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/cssfront/mine.css')}}">
-    <!--===============================================================================================-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="Wayne Bulthé" content="">
+
+    <title>Fat-flamingo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('vendors/venderfront/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Custom styles for this template -->
+    <link href="{{asset('css/css/shop-homepage.css')}}" rel="stylesheet">
+    <link href="{{asset('css/css/style3.css')}}" rel="stylesheet">
+
 </head>
-<body class="animsition">
 
-<!-- Header -->
-<header class="header-v3">
-    <!-- Header desktop -->
-    <div class="container-menu-desktop trans-03">
-        <div class="wrap-menu-desktop">
-            <nav class="limiter-menu-desktop p-l-45">
+<body>
 
-                <!-- Logo desktop -->
-                <a href="#" class="logo">
-                    <img class="img-fluid" src="{{asset('images/front/icons/logo-02.png')}}" alt="IMG-LOGO">
-                </a>
-
-                <!-- Menu desktop -->
-                <div class="menu-desktop">
-                    <ul class="main-menu">
-                        <li>
-                            <a href="index.html">Home</a>
-                            <ul class="sub-menu">
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="product.html">Shop</a>
-                        </li>
-
-                        <li class="label1" data-label1="hot">
-                            <a href="shoping-cart.html">Spots</a>
-                        </li>
-
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Icon header -->
-                <div class="wrap-icon-header flex-w flex-r-m h-full">
-                    <div class="flex-c-m h-full p-r-25 bor6">
-                        <div class="icon-header-item cl0 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
-                            <i class="zmdi zmdi-shopping-cart"></i>
-                        </div>
-                    </div>
-
-                    <div class="flex-c-m h-full p-lr-19">
-                        <div class="icon-header-item cl0 hov-cl1 trans-04 p-lr-11 js-show-sidebar">
-                            <i class="zmdi zmdi-menu"></i>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Header Mobile -->
-    <div class="wrap-header-mobile">
-        <!-- Logo moblie -->
-        <div class="logo-mobile">
-            <a href="index.html"><img src="{{asset('images/front/icons/logo-01.png')}}" alt="IMG-LOGO"></a>
-        </div>
-
-        <!-- Icon header -->
-        <div class="wrap-icon-header flex-w flex-r-m h-full m-r-15">
-            <div class="flex-c-m h-full p-r-5">
-                <div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
-                    <i class="zmdi zmdi-shopping-cart"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Button show menu -->
-        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-        </div>
-    </div>
-
-
-    <!-- Menu Mobile -->
-    <div class="menu-mobile">
-        <ul class="main-menu-m">
-            <li>
-                <a href="index.html">Home</a>
-
-            </li>
-
-            <li>
-                <a href="product.html">Shop</a>
-            </li>
-
-            <li>
-                <a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Spots:</a>
-            </li>
-
-
-            <li>
-                <a href="about.html">About</a>
-            </li>
-
-            <li>
-                <a href="contact.html">Contact</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Modal Search -->
-    <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-        <button class="flex-c-m btn-hide-modal-search trans-04">
-            <i class="zmdi zmdi-close"></i>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Fat-Flamingo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-
-        <form class="container-search-header">
-            <div class="wrap-search-header">
-                <input class="plh0" type="text" name="search" placeholder="Search...">
-
-                <button class="flex-c-m trans-04">
-                    <i class="zmdi zmdi-search"></i>
-                </button>
-            </div>
-        </form>
-    </div>
-</header>
-
-
-<!-- Sidebar -->
-<aside class="wrap-sidebar js-sidebar">
-    <div class="s-full js-hide-sidebar "></div>
-
-    <div class="sidebar flex-col-l p-t-22 p-b-25 ">
-        <div class="flex-r w-full p-b-30 p-r-27 ">
-            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-sidebar">
-                <i class="zmdi zmdi-close"></i>
-            </div>
-        </div>
-
-        <div class="sidebar-content flex-w w-full p-lr-65 js-pscroll">
-            <ul class="sidebar-link w-full">
-                <li class="p-b-13">
-                    <a href="index.html" class="text-white stext-102 cl2 hov-cl1 trans-04">
-                        Home
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
-
-                <li class="p-b-13">
-                    <a href="#" class="stext-102 cl2 hov-cl1 trans-04 text-white">
-                        My Wishlist
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Spots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
                 </li>
 
-                <li class="p-b-13">
-                    <a href="#" class="stext-102 cl2 hov-cl1 trans-04 text-white">
-                        My Account
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
+                @if (Route::has('login'))
+                    <li class="nav-item">
+                        @auth
+                            <a class="nav-link" href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
 
-                <li class="p-b-13">
-                    <a href="#" class="stext-102 cl2 hov-cl1 trans-04 text-white">
-                        Track Oder
-                    </a>
-                </li>
-
-                <li class="p-b-13">
-                    <a href="#" class="stext-102 cl2 hov-cl1 trans-04 text-white">
-                        Refunds
-                    </a>
-                </li>
-
-                <li class="p-b-13">
-                    <a href="#" class="stext-102 cl2 hov-cl1 trans-04 text-white">
-                        Help & FAQs
-                    </a>
-                </li>
-            </ul>
-
-            <div class="sidebar-gallery w-full p-tb-30">
-					<span class="mtext-101 cl5 text-white">
-						@ Fat-flamingo
-					</span>
-
-                        <h5 class="text-white my-3">Shop doors open @</h5>
-                <hr>
-                    <ul class="text-white">
-                        <li>Monday:10h00 -> 18h00</li>
-                        <li>Tuesday:10h00 -> 18h00</li>
-                        <li>Wednesday:10h00 -> 18h00</li>
-                        <li>Thursday:10h00 -> 18h00</li>
-                        <li>Friday:10h00 -> 18h00</li>
-                        <li>Saterday:10h00 -> 18h00</li>
-                        <li>Sunday:10h00 -> 18h00</li>
-                    </ul>
-                <div class="flex-w flex-sb p-t-36 gallery-lb">
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-01.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-01.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-02.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-02.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-03.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-03.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-04.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-04.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-05.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-05.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-06.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-06.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-07.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-07.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-08.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-08.jpg')}});"></a>
-                    </div>
-
-                    <!-- item gallery sidebar -->
-                    <div class="wrap-item-gallery m-b-10">
-                        <a class="item-gallery bg-img1" href="{{asset('images/gallery-09.jpg')}}" data-lightbox="gallery"
-                           style="background-image: url({{asset('images/gallery-09.jpg')}});"></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar-gallery w-full">
-					<span class="mtext-101 cl5 text-white">
-						About Us
-					</span>
-
-                <p class="stext-108 cl6 p-t-27 text-white">
-                    Skateshop in Bruges. <br>
-                    Selling the finest brands in clothing - shoes - skateboard hardware.<br><span class="fa fa-trophy"> </span> Best of Bruges Award <span class="fa fa-trophy"> </span></p>
-
-            </div>
-        </div>
-    </div>
-</aside>
-
-
-<!-- Cart -->
-<div class="wrap-header-cart js-panel-cart">
-    <div class="s-full js-hide-cart"></div>
-
-    <div class="header-cart flex-col-l p-l-65 p-r-25">
-        <div class="header-cart-title flex-w flex-sb-m p-b-8">
-				<span class="mtext-103 cl2">
-					Your Cart
-				</span>
-
-            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-                <i class="zmdi zmdi-close"></i>
-            </div>
-        </div>
-
-        <div class="header-cart-content flex-w js-pscroll">
-            <ul class="header-cart-wrapitem w-full">
-                <li class="header-cart-item flex-w flex-t m-b-12">
-                    <div class="header-cart-item-img">
-                        <img src="images/item-cart-01.jpg" alt="IMG">
-                    </div>
-
-                    <div class="header-cart-item-txt p-t-8">
-                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                            White Shirt Pleat
-                        </a>
-
-                        <span class="header-cart-item-info">
-								1 x $19.00
-							</span>
-                    </div>
-                </li>
-
-                <li class="header-cart-item flex-w flex-t m-b-12">
-                    <div class="header-cart-item-img">
-                        <img src="images/item-cart-02.jpg" alt="IMG">
-                    </div>
-
-                    <div class="header-cart-item-txt p-t-8">
-                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                            Converse All Star
-                        </a>
-
-                        <span class="header-cart-item-info">
-								1 x $39.00
-							</span>
-                    </div>
-                </li>
-
-                <li class="header-cart-item flex-w flex-t m-b-12">
-                    <div class="header-cart-item-img">
-                        <img src="images/item-cart-03.jpg" alt="IMG">
-                    </div>
-
-                    <div class="header-cart-item-txt p-t-8">
-                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                            Nixon Porter Leather
-                        </a>
-
-                        <span class="header-cart-item-info">
-								1 x $17.00
-							</span>
-                    </div>
-                </li>
-            </ul>
-
-            <div class="w-full">
-                <div class="header-cart-total w-full p-tb-40">
-                    Total: $75.00
-                </div>
-
-                <div class="header-cart-buttons flex-w w-full">
-                    <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-                        View Cart
-                    </a>
-
-                    <a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-                        Check Out
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-@yield('content')
-<!-- Banner -->
-<div class="sec-banner bg0 p-t-95 p-b-55">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="{{asset('images/banner-04.jpg')}}" alt="IMG-BANNER">
-
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Decks
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									New Stock
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Shop Now
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-6 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="{{asset('images/banner-05.jpg')}}" alt="IMG-BANNER">
-
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Trucks
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									New Stock
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Shop Now
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="{{asset('images/banner-07.jpg')}}" alt="IMG-BANNER">
-
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Bearings
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Collection <script>document.write(new Date().getFullYear());</script>
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Shop Now
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="{{asset('images/banner-08.jpg')}}" alt="IMG-BANNER">
-
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Wheels
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Collection <script>document.write(new Date().getFullYear());</script>
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Shop Now
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="{{asset('images/banner-09.jpg')}}" alt="IMG-BANNER">
-
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories & Tools
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Collection <script>document.write(new Date().getFullYear());</script>
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Shop Now
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Product -->
-<section class="bg0 p-t-23 p-b-130">
-    <div class="container">
-        <div class="p-b-10">
-            <h3 class="ltext-103 cl5">
-                Product Overview
-            </h3>
-        </div>
-
-        <div class="flex-w flex-sb-m p-b-52">
-            <div class="flex-w flex-l-m filter-tope-group m-tb-10">
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                    All Products
-                </button>
-                @if($categories)
-                    @foreach($categories as $category)
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".{{$category->name}}">
-                    {{$category->name}}
-                </button>
-                    @endforeach
+                    </li>
+                    <li class="nav-item">
+                        @if (Route::has('register'))
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        @endif
+                    </li>
+                @endauth
                 @endif
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/order') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-heartbeat" aria-hidden="true"></i></a>
+                </li>
 
-            </div>
-
-            <div class="flex-w flex-c-m m-tb-10">
-                <div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
-                    <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
-                    <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                    Filter
-                </div>
-
-                <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-                    <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-                    <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                    Search
-                </div>
-            </div>
-
-            <!-- Search product -->
-            <div class="dis-none panel-search w-full p-t-10 p-b-15">
-                <div class="bor8 dis-flex p-l-15">
-                    <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-                        <i class="zmdi zmdi-search"></i>
-                    </button>
-
-                    <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
-                </div>
-            </div>
-
-            <!-- Filter -->
-            <div class="dis-none panel-filter w-full p-t-10">
-                <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-                    <div class="filter-col1 p-r-15 p-b-27">
-                        <div class="mtext-102 cl2 p-b-15">
-                            Sort By
-                        </div>
-
-                        <ul>
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Default
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Popularity
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Average rating
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-                                    Newness
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Price: Low to High
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Price: High to Low
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="filter-col2 p-r-15 p-b-27">
-                        <div class="mtext-102 cl2 p-b-15">
-                            Price
-                        </div>
-
-                        <ul>
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-                                    All
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $0.00 - $50.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $50.00 - $100.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $100.00 - $150.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $150.00 - $200.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $200.00+
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="filter-col3 p-r-15 p-b-27">
-                        <div class="mtext-102 cl2 p-b-15">
-                            Color
-                        </div>
-
-                        <ul>
-                            <li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #222;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Black
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-                                <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-                                    Blue
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #b3b3b3;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Grey
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Green
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #fa4251;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Red
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #aaa;">
-										<i class="zmdi zmdi-circle-o"></i>
-									</span>
-
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    White
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="filter-col4 p-b-27">
-                        <div class="mtext-102 cl2 p-b-15">
-                            Tags
-                        </div>
-
-                        <div class="flex-w p-t-4 m-r--5">
-                            <a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                Fashion
-                            </a>
-
-                            <a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                Lifestyle
-                            </a>
-
-                            <a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                Denim
-                            </a>
-
-                            <a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                Streetstyle
-                            </a>
-
-                            <a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                Crafts
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row isotope-grid">
-            @if($products)
-                @foreach($products as $product)
-            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{$product->category ? $product->category->name : 'Uncategorized'}}">
-                <!-- Block2 -->
-                <div class="block2">
-                    <div class="block2-pic hov-img0 label-new" data-label="New">
-                        <img src="{{$product->photo ? asset($product->photo->file) : 'http://placehold.it/62x62'}}" alt="IMG-PRODUCT">
-
-                        <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                            Quick View
-                        </a>
-                    </div>
-
-                    <div class="block2-txt flex-w flex-t p-t-14">
-                        <div class="block2-txt-child1 flex-col-l ">
-                            <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                {{$product->brand ? $product->brand->name : 'No brand added'}}<br> {{$product->title}}
-                            </a>
-
-                            <span class="stext-105 cl3">
-									{{(($product->price)/100)*21+($product->price)}}€
-								</span>
-                        </div>
-
-                        <div class="block2-txt-child2 flex-r p-t-3">
-                            <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                <img class="icon-heart1 dis-block trans-04" src="{{asset('images/front/icons/icon-heart-01.png')}}" alt="ICON">
-                                <img class="icon-heart2 dis-block trans-04 ab-t-l" src="{{asset('images/front/icons/icon-heart-02.png')}}" alt="ICON">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @endif
-
-        </div>
-
-        <!-- Pagination -->
-        <div class="flex-c-m flex-w w-full p-t-38">
-            <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-                1
-            </a>
-
-            <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-                2
-            </a>
+            </ul>
         </div>
     </div>
-</section>
+</nav>
 
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+
+        <!-- /.col-lg-3 -->
+@yield('content')
+
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
 
 <!-- Footer -->
-<footer class="bg3 p-t-75 p-b-32">
+<footer class="py-5 bg-dark" style="background-image: url({{asset('images/bg/bg-asphalt.jpg')}});background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;" id="contact">
+    <img class="img-fluid " src="" alt="" id="fbg">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    Categories
-                </h4>
-                @if($categories)
+            <div class="col-md-4 text-white ">
+                <h5 class="">Shop Open @</h5>
                 <ul>
-                    @foreach($categories as $category)
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            {{$category->name}}
-                        </a>
-                    </li>
-                    @endforeach
-                </ul>
-               @endif
+                    <li>M	10:00–18:00</li>
+                    <li>T	10:00–18:00</li>
+                    <li>W 10:00–18:00</li>
+                    <li>T 10:00–18:00</li>
+                    <li>F	10:00–18:00</li>
+                    <li>S 10:00–18:00</li>
+                    <li>S	13:30–18:00</li>
+                </ul></div>
+            <div class="col-md-4 text-white d-flex flex-column">
+                <h5 class="">Contact @:</h5>
+                <a class="text-white" href="https://g.page/skateshopbrugge?share">Langestraat 24<br>8000 Brugge</a>
+                <a class="text-white" href="tel:050 48 11 85">Tel: 050 48 11 85</a>
+                <a class="text-white"  href="https://www.instagram.com/thefatflamingo/?fbclid=IwAR03obgSwbkUICHGe401mLL1NqsfceQDse9TMZF1xl2FT9vX5AkVUOTH1Yg"><i class="fa fa-instagram" aria-hidden="true"></i>  Follow us on instagram</a>
+                <a class="text-white"  href="https://www.facebook.com/skateshopthefatflamingobrugge/"><i class="fa fa-facebook-official" aria-hidden="true"></i> Follow us on facebook</a>
             </div>
-
-            <div class="col-sm-6 col-lg-3 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    Help
-                </h4>
-
-                <ul>
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Track Order
-                        </a>
-                    </li>
-
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Returns
-                        </a>
-                    </li>
-
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Shipping
-                        </a>
-                    </li>
-
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            FAQs
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    GET IN TOUCH
-                </h4>
-
-                <p class="stext-107 cl7 size-201">
-                    Any questions? Let us know in store at, Langestraat 24
-                    Brugge or call us on <a href="tel:050 48 11 85">050 48 11 85</a>
-                </p>
-
-                <div class="p-t-27">
-                    <a href="https://www.facebook.com/pg/skateshopthefatflamingobrugge/about/?ref=page_internal" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/thefatflamingo/?hl=nl" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-
-
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    Newsletter
-                </h4>
-
-                <form>
-                    <div class="wrap-input1 w-full p-b-4">
-                        <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-                        <div class="focus-input1 trans-04"></div>
-                    </div>
-
-                    <div class="p-t-18">
-                        <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-                            Subscribe
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="p-t-40">
-            <div class="flex-c-m flex-w p-b-18">
-                <a href="#" class="m-all-1">
-                    <img src="{{asset('images/front/icons/icon-pay-01.png')}}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{asset('images/front/icons/icon-pay-02.png')}}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{asset('images/front/icons/icon-pay-03.png')}}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{asset('images/front/icons/icon-pay-04.png')}}" alt="ICON-PAY">
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img src="{{asset('images/front/icons/icon-pay-05.png')}}" alt="ICON-PAY">
-                </a>
-            </div>
-
-            <p class="stext-107 cl6 txt-center">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a><br>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                And Copyright &copy; altered with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.wb-enterprise.be">Bulthé Wayne
-        </div>
+            <div class="col">
+                <img class="img-fluid rounded-circle" src="{{asset('images/icon/ms-icon-310x310.png')}}" alt="">
+            </div></div>
+        <p class="m-0 text-center text-white">Copyright &copy; Bulthé Wayne 2019</p>
     </div>
+    <!-- /.container -->
 </footer>
-
-
-<!-- Back to top -->
-<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-</div>
-
-<!-- Modal1 -->
-<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-    <div class="overlay-modal1 js-hide-modal1"></div>
-
-    <div class="container">
-        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-            <button class="how-pos3 hov3 trans-04 js-hide-modal1">
-                <img src="images/icons/icon-close.png" alt="CLOSE">
-            </button>
-
-            <div class="row">
-                <div class="col-md-6 col-lg-7 p-b-30">
-                    <div class="p-l-25 p-r-30 p-lr-0-lg">
-                        <div class="wrap-slick3 flex-sb flex-w">
-                            <div class="wrap-slick3-dots"></div>
-                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-
-                            <div class="slick3 gallery-lb">
-                                <div class="item-slick3" data-thumb="images/product-detail-01.jpg">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
-
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="item-slick3" data-thumb="images/product-detail-02.jpg">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
-
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="item-slick3" data-thumb="images/product-detail-03.jpg">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
-
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-5 p-b-30">
-                    <div class="p-r-50 p-t-5 p-lr-0-lg">
-                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">
-                            Lightweight Jacket
-                        </h4>
-
-                        <span class="mtext-106 cl2">
-								$58.79
-							</span>
-
-                        <p class="stext-102 cl3 p-t-23">
-                            Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-                        </p>
-
-                        <!--  -->
-                        <div class="p-t-33">
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Size
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            <option>Choose an option</option>
-                                            <option>Size S</option>
-                                            <option>Size M</option>
-                                            <option>Size L</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Color
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            <option>Choose an option</option>
-                                            <option>Red</option>
-                                            <option>Blue</option>
-                                            <option>White</option>
-                                            <option>Grey</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-204 flex-w flex-m respon6-next">
-                                    <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-minus"></i>
-                                        </div>
-
-                                        <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-                                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-plus"></i>
-                                        </div>
-                                    </div>
-
-                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                        Add to cart
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-                        <div class="flex-w flex-m p-l-100 p-t-40 respon7">
-                            <div class="flex-m bor9 p-r-10 m-r-11">
-                                <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-                                    <i class="zmdi zmdi-favorite"></i>
-                                </a>
-                            </div>
-
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-
-                            <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/jquery/jquery-3.2.1.min.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/animsition/js/animsition.min.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/bootstrap/js/popper.js')}}"></script>
-<script src="{{asset('vendors/venderfront/bootstrap/js/bootstrap.min.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/select2/select2.min.js')}}"></script>
-<script>
-    $(".js-select2").each(function(){
-        $(this).select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $(this).next('.dropDownSelect2')
-        });
-    })
-</script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/daterangepicker/moment.min.js')}}"></script>
-<script src="{{asset('vendors/venderfront/daterangepicker/daterangepicker.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/slick/slick.min.js')}}"></script>
-<script src="{{asset('js/jsfront/slick-custom.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/parallax100/parallax100.js')}}"></script>
-<script>
-    $('.parallax100').parallax100();
-</script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/MagnificPopup/jquery.magnific-popup.min.js')}}"></script>
-<script>
-    $('.gallery-lb').each(function() { // the containers for all your galleries
-        $(this).magnificPopup({
-            delegate: 'a', // the selector for gallery item
-            type: 'image',
-            gallery: {
-                enabled:true
-            },
-            mainClass: 'mfp-fade'
-        });
-    });
-</script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/isotope/isotope.pkgd.min.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/sweetalert/sweetalert.min.jss/venderfront')}}"></script>
-<script>
-    $('.js-addwish-b2').on('click', function(e){
-        e.preventDefault();
-    });
-
-    $('.js-addwish-b2').each(function(){
-        var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-        $(this).on('click', function(){
-            swal(nameProduct, "is added to wishlist !", "success");
-
-            $(this).addClass('js-addedwish-b2');
-            $(this).off('click');
-        });
-    });
-
-    $('.js-addwish-detail').each(function(){
-        var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-        $(this).on('click', function(){
-            swal(nameProduct, "is added to wishlist !", "success");
-
-            $(this).addClass('js-addedwish-detail');
-            $(this).off('click');
-        });
-    });
-
-    /*---------------------------------------------*/
-
-    $('.js-addcart-detail').each(function(){
-        var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-        $(this).on('click', function(){
-            swal(nameProduct, "is added to cart !", "success");
-        });
-    });
-</script>
-<!--===============================================================================================-->
-<script src="{{asset('vendors/venderfront/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-<script>
-    $('.js-pscroll').each(function(){
-        $(this).css('position','relative');
-        $(this).css('overflow','hidden');
-        var ps = new PerfectScrollbar(this, {
-            wheelSpeed: 1,
-            scrollingThreshold: 1000,
-            wheelPropagation: false,
-        });
-
-        $(window).on('resize', function(){
-            ps.update();
-        })
-    });
-</script>
-<!--===============================================================================================-->
-<script src="{{asset('js/jsfront/main.js')}}"></script>
+@yield('modal')
+<!-- Bootstrap core JavaScript -->
+<script src="{{asset('vendors/venderfront/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('vendors/venderfront/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<script src="{{asset('vendors/venderfront/bootstrap/js/mine.js')}}"></script>
 
 </body>
+
 </html>

@@ -8,7 +8,6 @@ use Illuminate\Notifications\Notifiable;
 use App\Role;
 use App\Photo;
 use App\Product;
-
 class User extends Authenticatable
 {
     use Notifiable;

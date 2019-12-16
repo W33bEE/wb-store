@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AdminCategoriesController extends Controller
 {
@@ -15,9 +14,8 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         //
-        $user=Auth::user();
         $categories = Category::all();
-        return view('admin.categories.index',compact('categories','user'));
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**

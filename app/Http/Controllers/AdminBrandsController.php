@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Brand;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AdminBrandsController extends Controller
 {
@@ -15,9 +14,8 @@ class AdminBrandsController extends Controller
     public function index()
     {
         //
-        $user=Auth::user();
         $brands = Brand::all();
-        return view('admin.brands.index',compact('brands','user'));
+        return view('admin.brands.index',compact('brands'));
     }
 
     /**

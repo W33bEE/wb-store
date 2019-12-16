@@ -1,15 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    @if(session('status'))
-        <div class="col-sm-12">
-            <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                <span class="badge badge-pill badge-success">Success  {{ session('status') }}</span> You are logged in!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    @endif
+    <?php use Carbon\Carbon;?>
     <div class="col-sm-12 mb-4">
         <div class="card-group">
             <div class="card col-md-6 no-padding ">
@@ -34,7 +25,7 @@
                     <div class="h4 mb-0">
                         <span class="count">{{$users = DB::table('users')->count()}}</span>
                     </div>
-                    <small class="text-muted text-uppercase font-weight-bold">All users</small>
+                    <small class="text-muted text-uppercase font-weight-bold">New Clients</small>
                     <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 40%; height: 5px;"></div>
                 </div>
             </div>
@@ -67,7 +58,7 @@
                     <div class="h1 text-muted text-right mb-4">
                         <i class="fa fa-clock-o"></i>
                     </div>
-                    <div id="dashtime" class="h4 mb-0"></div>
+                    <div class="h4 mb-0">{{Carbon::now()}}</div>
 
                     <small class="text-muted text-uppercase font-weight-bold">Avg. Time</small>
                     <div class="progress progress-xs mt-3 mb-0 bg-flat-color-5" style="width: 40%; height: 5px;"></div>

@@ -14,7 +14,13 @@ class CreateBillingsTable extends Migration
     public function up()
     {
         Schema::create('billings', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->string('street');
+            $table->integer('nr');
+            $table->string('bus');
+            $table->integer('postcode');
+            $table->string('city');
             $table->timestamps();
         });
     }

@@ -7,15 +7,12 @@ use App\User;
 use App\Category;
 use App\Brand;
 use App\Size;
-use App\Order;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
     //
-
-    protected $fillable = ['category_id','brand_id','title','body','price','stock_id','size_id','photo_id'];
-
+    protected $fillable = ['category_id','brand_id','title','body','price','size_id','price','photo_id'];
     public function user(){
         return $this->belongsTo('App\User');
     }
@@ -30,9 +27,5 @@ class Product extends Model
     }
     public function size(){
         return $this->belongsTo('App\Size');
-    }
-    public function orders()
-    {
-        return $this->belongsToMany(Order::class);
     }
 }

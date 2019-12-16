@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UsersRequest;
-use App\Http\Requests\UsersEditRequest;
 use App\Role;
-use Illuminate\Http\Request as Request;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\User;
 use App\Photo;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use mysql_xdevapi\Session;
 
@@ -35,9 +33,8 @@ class AdminUsersController extends Controller
     public function create()
     {
         //
-        $user=Auth::user();
         $roles = Role::pluck('name','id')->all();
-        return view('admin.users.create',compact('roles','user'));
+        return view('admin.users.create',compact('roles'));
     }
 
     /**
@@ -104,8 +101,8 @@ class AdminUsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UsersEditRequest $request, $id)
-    {//
-
+    {
+        //
         $user = User::findOrFail($id);
         if(trim($request->password)== ''){
             $input = $request->except('password');
@@ -121,7 +118,7 @@ class AdminUsersController extends Controller
             $input['photo_id'] = $photo->id;
         }
 
-        $user->update($input);
+        User::update($input);
         return redirect('/admin/users');
     }
 
