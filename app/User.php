@@ -8,9 +8,11 @@ use Illuminate\Notifications\Notifiable;
 use App\Role;
 use App\Photo;
 use App\Product;
+use Laravel\Cashier\Billable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.

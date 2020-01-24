@@ -16,7 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('css/css/shop-homepage.css')}}" rel="stylesheet">
     <link href="{{asset('css/css/style3.css')}}" rel="stylesheet">
-
+    @yield('extra')
 </head>
 
 <body>
@@ -31,18 +31,18 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="{{ url('/') }}">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{{url('/')}}#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Spots</a>
+                    <a class="nav-link" href="{{url('/spots')}}">Spots</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shop</a>
+                    <a class="nav-link" href="{{url('/shop')}}">Shop</a>
                 </li>
 
                 <li class="nav-item">
@@ -64,10 +64,12 @@
                 @endauth
                 @endif
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/order') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    @if(Cart::instance('default')->count()>0)
+                    <a id="cart" data-notify="{{Cart::instance('default')->count()}}" class="nav-link" href="{{ url('/order') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    @endif
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-heartbeat" aria-hidden="true"></i></a>
+                    <a id="wish" class="nav-link" data-notify="{{Cart::instance('default')->count()}}" href=" "><i class="fa fa-heartbeat" aria-hidden="true"></i></a>
                 </li>
 
             </ul>
@@ -128,8 +130,9 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{asset('vendors/venderfront/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('vendors/venderfront/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
 <script src="{{asset('vendors/venderfront/bootstrap/js/mine.js')}}"></script>
+@yield('extrajs')
 
 </body>
 

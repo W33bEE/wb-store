@@ -11,7 +11,71 @@ ul{
 }
 h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
 
+#cart::after {
+    content: attr(data-notify);
+    font-family: Poppins-Regular;
+    font-size: 12px;
+    color: #fff;
+    line-height: 15px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right:230px;
+    border-radius: 50px;
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    background-color: #717fe0;}
 
+#wish::after {
+    content: attr(data-notify);
+    font-family: Poppins-Regular;
+    font-size: 12px;
+    color: white;
+    line-height: 15px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right:200px;
+    border-radius: 50px;
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    background-color: tomato;}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+
+
+    height: 40px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+
+    /*box-shadow: 0 1px 3px 0 #e6ebf1;*/
+    /*-webkit-transition: box-shadow 150ms ease;*/
+    /*transition: box-shadow 150ms ease;*/
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
 
 /********************* Shopping Demo-6 **********************/
 .product-grid6,.product-grid6 .product-image6{overflow:hidden}
@@ -31,10 +95,15 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
 .product-grid6:hover .social{opacity:1;bottom:20px}
 .product-grid6 .social li{display:inline-block}
 .product-grid6 .social li a{color:#909090;font-size:16px;line-height:45px;text-align:center;height:45px;width:45px;margin:0 7px;border:1px solid #909090;border-radius:50px;display:block;position:relative;transition:all .3s ease-in-out}
+.product-grid6 .social li button{color:#909090;font-size:16px;line-height:45px;text-align:center;height:45px;width:45px;margin:0 7px;border:1px solid #909090;border-radius:50px;display:block;position:relative;transition:all .3s ease-in-out}
 .product-grid6 .social li a:hover{color:#fff;background-color:green;width:80px}
+.product-grid6 .social li button:hover{color:#fff;background-color:green;width:80px}
 .product-grid6 .social li a:after,.product-grid6 .social li a:before{content:attr(data-tip);color:#fff;background-color:green;font-size:12px;letter-spacing:1px;line-height:20px;padding:1px 5px;border-radius:5px;white-space:nowrap;opacity:0;transform:translateX(-50%);position:absolute;left:50%;top:-30px}
+.product-grid6 .social li button:after,.product-grid6 .social li a:before{content:attr(data-tip);color:#fff;background-color:green;font-size:12px;letter-spacing:1px;line-height:20px;padding:1px 5px;border-radius:5px;white-space:nowrap;opacity:0;transform:translateX(-50%);position:absolute;left:50%;top:-30px}
 .product-grid6 .social li a:after{content:'';height:15px;width:15px;border-radius:0;transform:translateX(-50%) rotate(45deg);top:-20px;z-index:-1}
+.product-grid6 .social li button:after{content:'';height:15px;width:15px;border-radius:0;transform:translateX(-50%) rotate(45deg);top:-20px;z-index:-1}
 .product-grid6 .social li a:hover:after,.product-grid6 .social li a:hover:before{opacity:1}
+.product-grid6 .social li button:hover:after,.product-grid6 .social li a:hover:before{opacity:1}
 @media only screen and (max-width:990px){.product-grid6{margin-bottom:30px}
 }
 

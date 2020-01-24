@@ -12,16 +12,15 @@
 */
 
 use App\Product;
-use App\Category;
+
 
 Route::get('/', function () {
-    $products = Product::all();
-    $categories = Category::all();
-    return view('welcome',compact('products','categories'));
+
+    return view('welcome');
 });
-Route::get('/order',function(){
-    return view('orders');
-});
+
+
+
 Route::get('/check',function(){
     return view('checkout');
 });
@@ -38,5 +37,8 @@ Route::resource('/admin/products','AdminProductsController');
 Route::resource('/admin/categories','AdminCategoriesController');
 Route::resource('/admin/brands','AdminBrandsController');
 Route::resource('/admin/sizes','AdminSizesController');
+Route::resource('/shop','ShopController');
+Route::resource('/cart','CardController');
+Route::resource('/checkout','CheckOutController');
 Route::resource('/spots','SpotsController');
 

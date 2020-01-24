@@ -3,6 +3,10 @@
 
 
 @extends('layouts.store-home')
+@section('extra')
+
+    <script src="https://js.stripe.com/v3/"></script>
+    @stop
 @section('content')
 <div class="container my-4">
     <div class="py-5 text-center">
@@ -14,41 +18,19 @@
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Your cart</span>
-                <span class="badge badge-secondary badge-pill">3</span>
+                <span class="badge badge-secondary badge-pill">{{Cart::instance('default')->count()}}</span>
             </h4>
             <ul class="list-group mb-3">
+                @foreach(Cart::content() as $item)
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
-                        <h6 class="my-0">Product name</h6>
-                        <small class="text-muted">Brief description</small>
+                        <h6 class="my-0">{{$item->name}}</h6>
+                        <small class="text-muted">{{$item->name}}</small>
                     </div>
-                    <span class="text-muted">$12</span>
+                    <span class="text-muted">€{{$item->price}}</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Second product</h6>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$8</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Third item</h6>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$5</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between bg-light">
-                    <div class="text-success">
-                        <h6 class="my-0">Promo code</h6>
-                        <small>EXAMPLECODE</small>
-                    </div>
-                    <span class="text-success">-$5</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (USD)</span>
-                    <strong>$20</strong>
-                </li>
+                @endforeach
+
             </ul>
 
             <form class="card p-2">
@@ -60,9 +42,25 @@
                 </div>
             </form>
         </div>
+        @if(session()->has('success_message'))
+            <div class="col-12 alert alert-success">
+                {{session()->get('success_message')}}
+            </div>
+        @endif
+        @if(count($errors)>0)
+            <div class="col-12 alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="col-md-8 order-md-1">
+
             <h4 class="mb-3">Billing address</h4>
-            <form class="needs-validation" novalidate="">
+            <form  id="payment-form" action="{{route('checkout.store')}}" method="POST">
+                {{csrf_field()}}
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">First name</label>
@@ -117,9 +115,9 @@
                 <div class="row">
                     <div class="col-md-5 mb-3">
                         <label for="country">Country</label>
-                        <select class="custom-select d-block w-100" id="country" required="">
+                        <select class="custom-select d-block w-100" id="city" required="">
                             <option value="">Choose...</option>
-                            <option>United States</option>
+                            <option>Belgium</option>
                         </select>
                         <div class="invalid-feedback">
                             Please select a valid country.
@@ -127,9 +125,12 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="state">State</label>
-                        <select class="custom-select d-block w-100" id="state" required="">
+                        <select class="custom-select d-block w-100" id="province" required="">
                             <option value="">Choose...</option>
-                            <option>California</option>
+                            <option>ledegem</option>
+                            <option>brugge</option>
+                            <option>kortrijk</option>
+                            <option>wevelgem</option>
                         </select>
                         <div class="invalid-feedback">
                             Please provide a valid state.
@@ -137,7 +138,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="zip">Zip</label>
-                        <input type="text" class="form-control" id="zip" placeholder="" required="">
+                        <input type="text" class="form-control" id="postalcode" placeholder="" required="">
                         <div class="invalid-feedback">
                             Zip code required.
                         </div>
@@ -156,53 +157,28 @@
 
                 <h4 class="mb-3">Payment</h4>
 
-                <div class="d-block my-3">
-                    <div class="custom-control custom-radio">
-                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                        <label class="custom-control-label" for="credit">Credit card</label>
+
+                    <div class="form-group d-flex flex-column">
+
+                            <label for="name">
+                                Name on card
+                            </label>
+                            <input class="form-control" id="name_on_card" name="name" placeholder="Enter cardname..." required>
+
                     </div>
-                    <div class="custom-control custom-radio">
-                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="debit">Debit card</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="paypal">Paypal</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="cc-name">Name on card</label>
-                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                        <small class="text-muted">Full name as displayed on card</small>
-                        <div class="invalid-feedback">
-                            Name on card is required
+                    <div class="form-group">
+                        <label for="card-element">
+                            Credit or debit card
+                        </label>
+                        <div id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
                         </div>
+
+                        <!-- Used to display form errors. -->
+                        <div id="card-errors" role="alert"></div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cc-number">Credit card number</label>
-                        <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                        <div class="invalid-feedback">
-                            Credit card number is required
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <label for="cc-expiration">Expiration</label>
-                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                        <div class="invalid-feedback">
-                            Expiration date required
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="cc-expiration">CVV</label>
-                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                        <div class="invalid-feedback">
-                            Security code required
-                        </div>
-                    </div>
-                </div>
+
+
                 <hr class="mb-4">
                 <button class="btn btn-outline-success btn-lg btn-block" type="submit">Continue to checkout</button>
             </form>
@@ -212,3 +188,85 @@
 
 </div>
     @stop
+@section('extrajs')
+    <script>
+        (function(){// Create a Stripe client.
+            var stripe = Stripe('pk_test_Nh4ArNZZGwFGNhmIq7Jwdj6600KTZNjU2i');
+
+// Create an instance of Elements.
+            var elements = stripe.elements();
+
+// Custom styling can be passed to options when creating an Element.
+// (Note that this demo uses a wider set of styles than the guide below.)
+            var style = {
+                base: {
+                    color: '#32325d',
+                    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                    fontSmoothing: 'antialiased',
+                    fontSize: '16px',
+                    '::placeholder': {
+                        color: '#aab7c4'
+                    }
+                },
+                invalid: {
+                    color: '#fa755a',
+                    iconColor: '#fa755a'
+                }
+            };
+
+// Create an instance of the card Element.
+            var card = elements.create('card', {style: style,hidePostalCode:true});
+
+// Add an instance of the card Element into the `card-element` <div>.
+            card.mount('#card-element');
+
+// Handle real-time validation errors from the card Element.
+            card.addEventListener('change', function(event) {
+                var displayError = document.getElementById('card-errors');
+                if (event.error) {
+                    displayError.textContent = event.error.message;
+                } else {
+                    displayError.textContent = '';
+                }
+            });
+
+// Handle form submission.
+            var form = document.getElementById('payment-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                var options = {
+                    name: document.getElementById('name_on_card').value,
+                    address_line1: document.getElementById('address').value,
+                    address_city: document.getElementById('city').value,
+                    address_state: document.getElementById('province').value,
+                    address_zip: document.getElementById('postalcode').value,
+
+
+                }
+                stripe.createToken(card, options).then(function(result) {
+                    if (result.error) {
+                        // Inform the user if there was an error.
+                        var errorElement = document.getElementById('card-errors');
+                        errorElement.textContent = result.error.message;
+                    } else {
+                        // Send the token to your server.
+                        stripeTokenHandler(result.token);
+                    }
+                });
+            });
+
+// Submit the form with the token ID.
+            function stripeTokenHandler(token) {
+                // Insert the token ID into the form so it gets submitted to the server
+                var form = document.getElementById('payment-form');
+                var hiddenInput = document.createElement('input');
+                hiddenInput.setAttribute('type', 'hidden');
+                hiddenInput.setAttribute('name', 'stripeToken');
+                hiddenInput.setAttribute('value', token.id);
+                form.appendChild(hiddenInput);
+
+                // Submit the form
+                form.submit();
+            }})();
+    </script>
+@stop
