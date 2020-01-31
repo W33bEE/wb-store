@@ -4,7 +4,7 @@
 
         <div class="col-lg-12 filters ">
             <h3 class="p-3">Product Overview:</h3>
-            <div class="button-group d-flex justify-content-center" data-filter-group ="categorie">
+            <div class="button-group d-md-flex justify-content-md-center" data-filter-group ="categorie">
                 <button class="button btn btn-outline-success"  data-filter="">All</button>
                 @if($categories)
                     @foreach($categories as $category)
@@ -64,6 +64,7 @@
                                         <input type="hidden" name="id" value="{{$product->id}}">
                                         <input type="hidden" name="name" value="{{$product->title}}">
                                         <input type="hidden" name="price" value="{{$product->price}}">
+                                        <input type="hidden" name="img" value="{{asset($product->photo->file)}}">
                                         <li><button type="submit" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></button></li>
                                     </form>
                                 </ul>
@@ -120,9 +121,14 @@
                                                     <div class="product-stock">{{$product->stock_id}}:In Stock</div>
                                                     <hr>
                                                     <div class="btn-group cart">
-                                                        <a href="" class="btn btn-outline-success">
-                                                            Add to cart
-                                                        </a>
+                                                        <form action="{{route('cart.store')}}" method="POST">
+                                                            {{csrf_field()}}
+                                                            <input type="hidden" name="id" value="{{$product->id}}">
+                                                            <input type="hidden" name="name" value="{{$product->title}}">
+                                                            <input type="hidden" name="price" value="{{$product->price}}">
+                                                            <input type="hidden" name="img" value="{{asset($product->photo->file)}}">
+                                                            <button class=" btn btn-outline-success" type="submit" data-tip="Add to Cart">Add to Cart</button>
+                                                        </form>
                                                     </div>
                                                     <div class="btn-group wishlist">
                                                         <button type="button" class="btn btn-danger">

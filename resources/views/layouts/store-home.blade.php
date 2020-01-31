@@ -11,6 +11,7 @@
     <title>Fat-flamingo</title>
 
     <!-- Bootstrap core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap" rel="stylesheet">
     <link href="{{asset('vendors/venderfront/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- Custom styles for this template -->
@@ -24,7 +25,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Fat-Flamingo</a>
+        <a class="navbar-brand bis" href="{{ url('/') }}">Fat-Flamingo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,7 +52,7 @@
                 @if (Route::has('login'))
                     <li class="nav-item">
                         @auth
-                            <a class="nav-link" href="{{ url('/home') }}">Home</a>
+
                         @else
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
 
@@ -65,11 +66,13 @@
                 @endif
                 <li class="nav-item">
                     @if(Cart::instance('default')->count()>0)
-                    <a id="cart" data-notify="{{Cart::instance('default')->count()}}" class="nav-link" href="{{ url('/order') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a id="cart" data-notify="{{Cart::instance('default')->count()}}" class="nav-link" href="{{ url('/cart') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                     @endif
                 </li>
                 <li class="nav-item">
+                    @if(Cart::instance('default')->count()>0)
                     <a id="wish" class="nav-link" data-notify="{{Cart::instance('default')->count()}}" href=" "><i class="fa fa-heartbeat" aria-hidden="true"></i></a>
+                    @endif
                 </li>
 
             </ul>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Photo;
 use App\Product;
 use App\Brand;
 class CardController extends Controller
@@ -40,7 +41,7 @@ class CardController extends Controller
     {
         //
 
-        Cart::add($request->id, $request->name,1,$request->price)
+        Cart::add($request->id, $request->name,1,$request->price,['img'=>$request->img])
              ->associate('App\Product');
         return redirect()->route('cart.index')->with('success_message','Item was added to cart !..');
     }

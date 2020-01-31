@@ -1,7 +1,7 @@
 @extends('layouts.store-home')
 @section('content')
-<div class="row">
-    <h1>Let Yourself loose .......</h1>
+<div class="col">
+    <h1 class="p-3">Let Yourself loose .......</h1>
     @if($spots)
         @foreach($spots as $spot)
     <div class="card mb-3">
@@ -43,5 +43,5 @@
     </div>
         @endforeach
     @endif
-
+</div>
     @stop

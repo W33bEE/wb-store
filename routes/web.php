@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/check',function(){
     return view('checkout');
 });
+
 Auth::routes();
 Route::group(['middleware'=>'admin'], function(){
     Route::get('/admin',function(){
