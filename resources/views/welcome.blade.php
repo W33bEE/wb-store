@@ -52,5 +52,8 @@
     <div class="col-lg-6 my-4 " >
         <img class="d-block img-fluid" src="{{asset('images/bg/shopdeck.jpg')}}" alt="">
     </div>
-
+    <div id="app" class="lol">
+        <example-component></example-component>
+        <test></test>
+    </div>
 @stop

@@ -135,6 +135,7 @@
 <script src="{{asset('vendors/venderfront/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
 <script src="{{asset('vendors/venderfront/bootstrap/js/mine.js')}}"></script>
+<script src="{{asset("js/app.js")}}"></script>
 @yield('extrajs')
 
 </body>
