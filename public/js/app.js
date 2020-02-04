@@ -1920,16 +1920,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -37986,24 +37976,9 @@ var staticRenderFns = [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-8" }, [
           _c("div", { staticClass: "card" }, [
-            _c("table", [
-              _c("thead", [
-                _c("th", [_vm._v("hooker")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("wooker")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("price")])
-              ]),
-              _c("tbody", [
-                _c("tr", [
-                  _c("td", [_vm._v("joen moedras")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("pimp daddy")]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v("€150")])
-                ])
-              ])
-            ])
+            _vm._v(
+              "\n           this is an example page made in vue\n            "
+            )
           ])
         ])
       ])
